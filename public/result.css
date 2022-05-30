@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    margin-top: 1rem;
+}
+.success{
+    color: forestgreen;
+}
+.failure{
+    color: red;
+}
+a{
+    text-decoration: none;
+}
+p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 1000;
+    margin: 1rem;
+}

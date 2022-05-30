@@ -1,1 +1,47 @@
-<%- include('navbar'); -%> <%- include('footer'); -%>
+<%- include('navbar'); -%>
+<link rel="stylesheet" href="turf_add.css" />
+<div>
+  <h1>Welcome to Add Turf</h1>
+  <p>Register your turf with us for free</p>
+  <form action="/addturf" method="post">
+    <input
+      class="input-text"
+      type="text"
+      placeholder="Enter Your Turf Name"
+      name="turfName"
+      required
+    />
+    <input
+      class="input-text"
+      type="text"
+      placeholder="Enter It's Location"
+      name="location"
+      required
+    />
+    <input
+      class="input-text"
+      type="text"
+      placeholder="Turf Owner's Name"
+      name="ownerName"
+      required
+    />
+    <input
+      class="input-text"
+      type="tel"
+      name="phno"
+      placeholder="Enter your Mobile No"
+      required
+    />
+    <div>
+      <input required type="checkbox" name="agreetnc" id="agree" />
+      <label for="agree"
+        >I allow Turf Booking to book our turf through online mode</label
+      >
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>
+<%- include('footer'); -%>
