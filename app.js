@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const jsdom = require('jsdom');
-const $ = require("jquery")(new jsdom.JSDOM().window);
 const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 async function main() {
@@ -31,7 +29,16 @@ app.get('/home', (req, res) => {
     res.render("home.ejs");
 })
 app.get('/booking', (req, res) => {
-    res.render("booking.ejs");
+    turf.find({}, (err, foundTurfs) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+
+            res.render("booking.ejs", { data: foundTurfs });
+        }
+    })
+
 })
 app.get('/cancel', (req, res) => {
     res.render("cancel.ejs");

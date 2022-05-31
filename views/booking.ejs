@@ -1,3 +1,27 @@
 <%- include('navbar'); -%>
-<h1>Booking</h1>
+<div>
+    <link rel="stylesheet" href="turf_add.css">
+  <form action="/booking" method="post">
+    <input class =  "input-text" type="text" name="name" placeholder="Enter Your Name" />
+    <input class =  "input-text" type="tel" name="phno" placeholder="Enter Your Mobile Number" />
+    <input class =  "input-text" type="email" name="email" placeholder="Enter Your E-Mail" />
+    <div class = "date">
+        <label for="playdate">When do you want to play:</label>
+        <input input-text type="date" name="playDate" id = playdate>
+    </div>
+    <label for="turf">Select a Turf:</label>
+    <select class =  "input-text" name="turf" id="turf">
+        <option value=""">Select The Turf</option>
+      <% for(let i = 0;i < data.length;i++){ %>
+      <option value="turfname">
+        <%=data[i].turfName %>,<%=data[i].location %>
+      </option>
+      <%}%>
+    </select>
+    <div>
+      <button type="submit">Book</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>
 <%- include('footer'); -%>
