@@ -4,9 +4,13 @@
     padding: 0px;
     font-family: 'Chilanka', cursive;
 }
+body{
+    background-color: cadetblue;
+}
 .nav{
     background-color: green;
     position: sticky;
+    top: 0;
 }
 .ul{
     display: flex;

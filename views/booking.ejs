@@ -1,21 +1,45 @@
 <%- include('navbar'); -%>
 <div>
-    <link rel="stylesheet" href="turf_add.css">
-  <form action="/booking" method="post">
-    <input class =  "input-text" type="text" name="name" placeholder="Enter Your Name" />
-    <input class =  "input-text" type="tel" name="phno" placeholder="Enter Your Mobile Number" />
-    <input class =  "input-text" type="email" name="email" placeholder="Enter Your E-Mail" />
-    <div class = "date">
-        <label for="playdate">When do you want to play:</label>
-        <input input-text type="date" name="playDate" id = playdate>
+  <h1>Welcome To Turf Booking</h1>
+  <p>Book your Turf On A Particcular Data And Time</p>
+  <link rel="stylesheet" href="turf_add.css" />
+  <form action="/booking" method="post" autocomplete="off">
+    <input
+      class="input-text"
+      type="text"
+      name="name"
+      placeholder="Enter Your Name"
+    />
+    <input
+      class="input-text"
+      type="tel"
+      name="phno"
+      placeholder="Enter Your Mobile Number"
+    />
+    <input
+      class="input-text"
+      type="email"
+      name="email"
+      placeholder="Enter Your E-Mail"
+    />
+    <div>
+      <label for="playdate">When do you want to play:</label>
+      <input class="date" type="date" name="playDate" id="playdate" />
     </div>
     <label for="turf">Select a Turf:</label>
-    <select class =  "input-text" name="turf" id="turf">
-        <option value=""">Select The Turf</option>
+    <select class="input-text" name="turf" id="turf">
+      <option value="">Select The Turf</option>
       <% for(let i = 0;i < data.length;i++){ %>
-      <option value="turfname">
+      <option id="turfId" value="<%=data[i]._id%>">
         <%=data[i].turfName %>,<%=data[i].location %>
       </option>
+      <%}%>
+    </select>
+    <label for="slot">Select a Slot:</label>
+    <select class="input-text" name="slot" id="slot">
+      <option value="">Select The Turf First</option>
+      <% for(let i = 0;i < slot.length;i++){ %>
+      <option value="<%=slot[i].gameTime%>"><%=slot[i].gameTime%></option>
       <%}%>
     </select>
     <div>
@@ -24,4 +48,6 @@
     </div>
   </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../index.js"></script>
 <%- include('footer'); -%>

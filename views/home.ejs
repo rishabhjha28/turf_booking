@@ -1,11 +1,25 @@
 <%- include('navbar'); -%>
+<link rel="stylesheet" href="turf_add.css" />
 <h1>Welcome to turf booking</h1>
 <p>you can add your own turf</p>
 <p>People will play there and pay you for it</p>
 <p>You have to arrange sports equipment for them</p>
-<h2>Yo players yes i am talking to you</h2>
+<h2>Yo players yes i am talking to you too</h2>
 <p>Book the turf</p>
 <p>Play with your friend</p>
 <p>We will provide for sports item</p>
 <p>Make memories</p>
+<h1>My Bookings</h1>
+<div class="mybookings">
+  <form action="/home" method="post">
+    <input
+      required
+      class="input-text"
+      type="tel email"
+      name="contact"
+      placeholder="Enter your Mobile No/email"
+    />
+    <button type="submit">My Bookings</button>
+  </form>
+</div>
 <%- include('footer'); -%>
